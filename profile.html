@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/logo_blue_bright.png" type="favicon/ico" />
+  <title>Profile</title>
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.js"></script>
+  <link rel="stylesheet" type="text/css" href="style/style2.css">
+  <link rel="stylesheet" type="text/css" href="style/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="style/ekko-lightbox.css">
+  <script>
+ 	$('#myTabs a[href="#profile"]').tab('show') // Select tab by name
+    $('#myTabs a:first').tab('show') // Select first tab
+    $('#myTabs a:last').tab('show') // Select last tab
+    $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)  
+  </script>
+  <script>
+  	$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+		    event.preventDefault();
+		    $(this).ekkoLightbox();
+	}); 
+	$(function () {
+	  $('[data-hover="tooltip"]').tooltip()
+	});
+  </script>
+</head>
+<body>
+  <header class="navbar-fixed-top">
+	<nav class="navbar navbar-default">
+	  <div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<ul class="nav navbar-nav navbar-left">
+		  <li><a class="brand" href="home.html"><img id="brand-img" src="images/logo_white.png" alt=""></a></li>
+		  <li id="t">
+			<form class="navbar-form navbar-left" role="search">
+			  <div class="form-group">
+				<input type="text" id="input-text-search" class="form-control" placeholder="Search">
+				<button type="submit" class="search-button"><i id="icon-search" class="fa fa-search"></i></button>
+			  </div>
+			</form>
+		  </li>
+		</ul>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+
+		  <ul id="nav-center" class="nav navbar-nav">
+			<li><a class="nav-main" href="home.html"><i class="fa fa-home fa-2x"></i><span class="nav-main-text"> Home</span></a></li>
+			<li><a class="nav-main" href="notification.html"><i class="fa fa-bell fa-2x"></i> <span class="nav-main-text"> Notifications <span class="badge">42</span></span></a></li>
+			<li><a class="nav-main" href="#"><i class="fa fa-envelope fa-2x"></i> <span class="nav-main-text"> Messages <span class="badge">10</span></span></li>
+		  </ul>
+
+
+		  <ul class="nav navbar-nav navbar-right">
+		    <div class="dropdown" id="avatar">
+			  <a id="avatar-href" class="nav-right" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			    <img  src="images/avatar2.png" alt="" class="img-avatar"> 
+			  </a>
+			  <span class="name">User Con Coc</span>
+			  <ul class="dropdown-menu" id="avatar-dropdown-menu">
+			    <li><a class="dropdown-option" href="profile.html">View Profile</a></li>
+			    <li role="separator" class="divider"></li>
+			    <li><a class="dropdown-option" href="#">Help</a></li>
+			    <li><a class="dropdown-option" href="#">Settings</a></li>
+			    <li role="separator" class="divider"></li>
+			    <li><a class="dropdown-option" href="login.html">Logout</a></li>
+			  </ul>
+			  <a href="post.html" class="nav-right"><button id="button-post" type="button" class="btn btn-default"><i class="fa fa-pencil"> </i> Post</button></a> 
+			</div>
+		  </ul>
+	  </div>
+	</nav>
+  </header>		
+  <div class="container-fluid background">
+    <img src="images/background-small.png" alt="">
+  </div>
+  <a id="avatar" class="nav-right" href="#"><img  src="images/avatar2.png" alt="" class="img-avatar-large"></a>
+  <div id="sub-tab">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-md-3"></div>
+  			<div class="col-md-6">
+  				<ul id="nav-sub-tab" class="nav navbar-nav">
+					<li class="sub-tab-active"><a href="#"><div class="nav-main-text"> Posts</div><div class="statics-number">4</div></a></li>
+					<li><a href="photo.html"><div class="nav-main-text"> Photos</div><div class="statics-number">15</div></a></li>
+					<li><a href="#"><div class="nav-main-text"> Following</div><div class="statics-number">6</div></a></li>
+				</ul>
+  			</div>
+  			<div class="col-md-3">
+  				<div class="pull-right"><button type="button" class="btn btn-primary">Edit Profile</button></div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+  <div id="main-page" class="container-fluid">
+  <div class="container">
+	<div class="row">
+	  <div class="col-md-3">
+		  <div id="panel-info-body">
+			<a href="#" class="name-medium">User Con Coc</a><br />
+			<a href="#" class="another-name-medium">@RealFrog</a>
+			<div class="clearfix"></div>
+			<div class="my-info">
+			  <div class="my-info-element"><i class="fa fa-map"></i> Hanoi, Viet Nam</div>
+			  <div class="my-info-element"><i class="fa fa-calendar"></i> Joined June 09, 2016</div><br/>
+			  <div class="my-info-element"><i class="fa fa-camera"></i> Photos</div>
+			  <div class="photo-suggest">
+			  	<div class="photo-mini"><a href="images/post2/1.jpg" data-toggle="lightbox" data-title="Hello world" data-gallery="mini-photo"><img src="images/post2/1.jpg" alt=""></a></div>
+			  	<div class="photo-mini"><a href="images/post3/2.jpg" data-toggle="lightbox" data-title="Grate Wall" data-footer="ni hao" data-gallery="mini-photo"><img src="images/post3/2.jpg" alt=""></a></div>
+			  	<div class="photo-mini"><a href="images/post3/1.jpg" data-toggle="lightbox" data-title="Paris x Eiffel" data-gallery="mini-photo"><img src="images/post3/1.jpg" alt=""></a></div>
+			  	<div class="photo-mini"><a href="images/post4/7.jpg" data-toggle="lightbox" data-title="no-title" data-gallery="mini-photo"><img src="images/post4/7.jpg" alt=""></a></div>
+			  	<div class="photo-mini"><a href="images/post4/6.jpg" data-toggle="lightbox" data-title="Smile" data-footer="Everyone smiles" data-gallery="mini-photo"><img src="images/post4/6.jpg" alt=""></a></div>
+			  	<div class="photo-mini"><a href="images/post4/5.jpg" data-toggle="lightbox" data-title="no-title" data-gallery="mini-photo"><img src="images/post4/5.jpg" alt=""></a></div>
+			  </div>
+			  <!--<div class="my-info-element"><button type="button" class="button-tweet btn btn-primary"><i class="fa fa-pencil fa-lg"></i> <span class="something">&nbsp;&nbsp;Say hello to User</span></button></div>-->
+		    </div>
+		  </div>
+      </div>
+	  <div class="col-md-6">
+	  	<div class="panel panel-default">
+		  <div id="add-border-top" class="panel-body">
+		  	<div class="poster">
+		  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+		  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+				<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+			    <div class="post-time">5m ago</div>
+		  	</div>
+		    <a id="a-post" class="post-content" data-toggle="modal" data-target="#post1" href="#">
+		    	<div id="panel-main-content" class="panel panel-default">
+				  <div id="post-image-thumbnail" class="panel-body"><img class="img-responsive" src="images/post1/thumbnail.jpg" alt=""></div>
+				  <div class="panel-body">
+				    <div class="post-title" title="12 cách giúp bạn du lịch khắp thế giới không tốn một xu">12 cách giúp bạn du lịch khắp thế giới không tốn một xu</div>
+				    <div class="post-content-text">Giá vé máy bay, phòng khách sạn, dịch vụ ăn uống tăng chóng mặt… là những lý do khiến nhiều du khách gặp khó khăn trong việc lựa chọn kỳ ... </div>
+				  </div>
+				</div>
+				<div name="post1" class="modal fade" id="post1" tabindex="-1" role="dialog" aria-labelledby="post1Label">
+				  <div class="modal-dialog modal-lg" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-backdrop="static"  data-keyboard="false" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <div name="top-post" class="poster">
+					  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+					  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+							<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+						    <div class="post-time">5m ago</div>
+					  	</div>
+					  	
+				      </div>
+				      <div class="modal-body">
+				        <div class="full-content">
+					  		<div class="full-content-title">
+					  		  12 cách giúp bạn du lịch khắp thế giới không tốn một xu
+					  		</div>
+					  		<div class="full-content-open"><strong>
+					  		  Giá vé máy bay, phòng khách sạn, dịch vụ ăn uống tăng chóng mặt… là những lý do khiến nhiều du khách gặp khó khăn trong việc lựa chọn kỳ nghỉ phù hợp, đặc biệt là đối với những du khách có nguồn kinh phí hạn hẹp.</strong> 
+					  		</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/1.jpg" alt=""></center></div></center>
+					  		<div class="full-content-text">Tuy nhiên, có rất nhiều cách để đi du lịch nước ngoài không tốn một xu mà bạn có thể áp dụng ngay từ bây giờ, thậm chí là bạn còn được… trả tiền cho tất cả các hoạt động của mình. Bạn có sẵn sàng thử không?</div>
+					  		<div class="full-content-chapter">1. Trở thành một hướng dẫn viên du lịch</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/2.jpg" alt=""></center></div></center>
+					  		<div class="full-content-text">Trở thành hướng dẫn viên du lịch là một trong những cách giúp bạn dễ dàng tiếp cận với những địa điểm du lịch nổi tiếng trong nước và ngoài nước. Nó có thể giúp bạn biết đến và hiểu thêm rất nhiều nền văn hóa khác nhau mà không tốn một đồng nào. Tuy nhiên, công việc này cũng có những hạn chế nhất định. Thứ nhất, nếu bạn là một hướng dẫn viên du lịch tự do bạn có thể thoải mái hơn trong khi làm việc, nhưng điều đó cũng có nghĩa là lương của bạn sẽ không đều và bạn cũng không được đảm bảo là sẽ có công việc thường xuyên. Thứ hai, nếu bạn đủ may mắn để có một công việc ổn định tại một công ty du lịch, thì bạn phải xử lý hết các công việc hậu cần, lên kế hoạch và cố gắng để quản lý tốt nhóm khách du lịch “cáu kỉnh” cho mỗi tuần tại một thời điểm khác nhau.</div>
+					  		<div class="full-content-chapter">2. Tham gia WWOOF</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/3.jpg" alt=""></center></div></center>
+					  		<div class="full-content-text"><b>WWOOF</b> (www.wwoof.net) là tổ chức phi lợi nhuận liên kết các nông trại hữu cơ của rất nhiều nước trên thế giới. Bạn có thể làm việc tình nguyện ở các trang trại này trong một thời gian, để đổi lấy một chỗ ở và các bữa ăn được nấu tại nhà. WWOOF có thể không phải là một sự lựa chọn công việc hoàn hảo, nhưng nó là một cách tuyệt vời để bạn có thể nhìn ngắm thế giới trong khi vẫn “bảo toàn” được số tiền trong thẻ ngân hàng của mình.</div>
+					  		<div class="full-content-chapter">3. Trở thành giáo viên dạy ngoại ngữ</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/4.jpg" alt=""></center></div></center>
+					  		<div class="full-content-text">Nếu bạn đang tìm kiếm một cuộc phiêu lưu ở nước ngoài và bạn có trình độ Anh ngữ tốt, hãy thử tham gia công việc giảng dạy tiếng Anh hoặc tiếng Việt ở nước ngoài xem sao. Có rất nhiều những trung tâm dạy ngoại ngữ ở các khu vực châu Á, Trung Đông, châu Mỹ Latinh… có nhu cầu tuyển dụng giáo viên giỏi tiếng Anh và tiếng Việt, và hầu hết các nước đó đều không yêu cầu bạn bắt buộc phải nói được ngôn ngữ bản địa. Nếu bạn có ý định đi du lịch bằng cách này, nhớ trang bị cho mình một số chứng chỉ giảng dạy ngoại ngữ được cấp bởi các Tổ chức quốc tế nhé. Và bạn biết đấy, mức lương cho công việc này không hề thấp một chút nào!</div>
+					  		<div class="full-content-chapter">4. Làm các công việc liên quan đến thương mại, hàng hóa xuất khẩu</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/5.jpg" alt=""></center></div></center>
+					  		<div class="full-content-text">Làm việc trong các công ty liên quan đến xuật nhập khẩu và thu mua hàng hóa ở nước ngoài, sẽ giúp bạn có cơ hội được cử đi công tác ở nước ngoài thường xuyên. Với công việc này bạn sẽ có cơ hội tìm hiểu về các loại đặc sản, hàng hóa thủ công ấn tượng ở nước khác. Nhưng bên cạnh đó, vì bạn đang đi làm việc nên nhiều khi nó sẽ khiến bạn căng thẳng và áp lực, do vậy bạn sẽ không cảm nhận hết được vẻ đẹp của những nơi mình đang đến.</div>
+					  		<div class="full-content-chapter">5. Viết sách hướng dẫn du lịch</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/6.jpg" alt=""></center></div></center>
+					  		<div class="full-content-text">Thực sự không có nhiều ngành nghề lãng mạn và hấp dẫn như công việc nghiên cứu, và viết các sách hướng dẫn du lịch cho những website du lịch nổi tiếng. Khi làm công việc này, bạn sẽ được đến hàng trăm địa điểm du lịch khác nhau để trải nghiệm nền văn hóa, ẩm thực nổi bật của mỗi nơi. Tuy nhiên, công việc này thường đòi hỏi bạn phải có năng khiếu viết lách và phải nộp bài viết của mình đúng thời hạn, nên những người làm công việc này hầu hết đều phải làm việc từ 12 đến 14 tiếng mỗi ngày. Ngoài ra, việc nhìn thấy những địa điểm tham quan cũng chỉ là một phần nhỏ trong công việc của họ mà thôi. Bởi họ còn bắt buộc phải nộp các báo cáo, các bài viết, lập bản đồ cho những khu vực họ tham quan và ngồi nhập các dữ liệu cho bài viết. Vì một ví tiền đi du lịch eo hẹp và vì bạn đang ở độ tuổi 20 – căng tràn sức sống, không có gì có thể làm khó bạn được phải không?</div>
+					  		<div class="full-content-chapter">6. Trở thành tiếp viên hàng không</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/7.jpg" alt=""></center></div></center>
+					  		<div class="full-content-text">Một công việc không hề dễ dàng đối với phần lớn mọi người, nhưng khi làm công việc này bạn không chỉ có một mức lương cao mà còn nhận được rất nhiều lợi ích đi du lịch không chỉ cho bản thân, mà còn cho cả gia đình nữa.</div>
+					  		<div class="full-content-chapter">7. Làm việc trên một con tàu du lịch</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/8.jpg" alt=""></center></div></center>
+					  		<div class="full-content-text">Làm việc trên một con tàu du lịch bạn có thể được ghé thăm nhiều bến cảng xinh đẹp và có cơ hội được lênh đênh giữa đại dương. Bên cạnh đó, các thành viên của phi hành đoàn còn có khu ăn uống riêng, các quán cà phê Internet, phòng tập thể dục,… Bạn có thể chọn công việc phục vụ và dọn dẹp trên tàu, tuy nhiên công việc này thường dành cho những bạn có sức khỏe tốt và đặc biệt không bị say sóng.</div>
+					  		<div class="full-content-chapter">8. Mở một blog du lịch</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/9.jpg" alt=""></center></div></center>
+					  		<div class="full-content-text">Là một blogger du lịch chuyên nghiệp là một công việc khá khó khăn và mất rất nhiều công sức. Hầu hết các blogger du lịch đều dành một năm để xây dựng trang web của mình, tung ra bài viết hàng ngày và xây dựng tên tuổi của mình… trước khi có thể thu được tiền quảng cáo từ trang web. Để làm được tất cả các điều này, bạn phải thực sự yêu thích du lịch và thích viết lách.</div>
+					  		<div class="full-content-chapter">9. Làm việc như một “Au Pair”</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/10.jpg" alt=""></center></div></center>
+					  		<div class="full-content-text">“Au Pair” là một thuật ngữ dùng để chỉ sinh viên nước ngoài được bảo lãnh và đón tiếp bởi một gia đình người nước ngoài, với mục đích hỗ trợ, giúp đỡ cho sinh viên có cơ hội học tập, thuần thục ngôn ngữ nước bản xứ và rèn luyện một số kĩ năng sống và làm việc theo phong cách nước bản xứ. Bạn có thể phụ giúp gia đình bảo lãnh mình làm các công việc nhà như: Dọn dẹp, chăm sóc vườn, chăm sóc các em nhỏ để đổi lại bạn sẽ có một khoản tiền để chi tiêu và đi du lịch. “Au Pair” sẽ là một cách tuyệt vời để bạn có thể được nhìn thấy những nền văn hóa mới, thông qua nhận thức và cách ứng xử của những người dân địa phương.</div>
+					  		<div class="full-content-chapter">10. Trở thành một nhiếp ảnh gia chụp ảnh cưới</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/11.jpg" alt=""></center></div></center>
+					  		<div class="full-content-text">Làm nhiếp ảnh gia chụp ảnh cưới sẽ giúp bạn thỏa mãn đam mê đi du lịch và tha hồ thể hiện sự sáng tạo qua các bức hình. Công việc này đòi hỏi bạn phải có kỹ năng chụp hình tốt và có tố chất nghệ sĩ. Hiện nay, có rất nhiều công ty tổ chức dịch vụ chụp hình cưới đáp ứng mọi nhu cầu về địa điểm chụp khác nhau trên thế giới cho khách hàng, bạn có thể thử xin việc tại đây. Nếu bạn không thích chịu sự gò bó, thì cũng có thể bắt đầu “sự nghiệp” với những bộ hình cưới chụp cho bạn bè và người thân xem sao.</div>
+					  		<div class="full-content-chapter">11. Làm việc tại các tổ chức phi chính phủ</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/12.gif" alt=""></center></div></center>
+					  		<div class="full-content-text">Với trình độ tiếng Anh tốt, sự năng động, tự tin, cộng với khát khao được giúp đỡ cho nhiều số phận kém may mắn trên thế giới, bạn hoàn toàn có khả năng làm việc tại các tổ chức phi chính phủ. Với công việc này, bạn sẽ được di chuyển tới nhiều nơi trên thế giới, tuy những nơi đó không phải là những địa điểm du lịch nổi tiếng, nhưng cũng giúp bạn thỏa mãn được giấc mơ trở thành công dân toàn cầu.</div>
+					  		<div class="full-content-chapter">12. Trở thành một nhà văn du lịch</div>
+					  		<center><div class="full-content-image"><center><img class="img-responsive" src="images/post1/13.jpg" alt=""></center></div></center>
+					  		<div class="full-content-text">Hầu hết những tác giả viết sách đều không nhận được một đồng nào khi bắt đầu chuyến đi của mình. Tuy nhiên, nếu có có can đảm để thử, thì sau khi kết thúc chuyến du lịch của mình bạn hãy thử viết sách xem sao. Không gì là không thể, và cuốn “Xách ba lô lên và đi” của Huyền Chip là một một tấm gương mà bạn có thể học hỏi.</div>
+					  	</div>
+					  	<div class="end-of-part"></div>
+					  	<button class="share" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+						<button class="comment" style="margin-left: 27px;border-width: 0;background: transparent;" id="button-function-for-post comment"><i class="fa fa-comment"></i> 1.1k</button>
+						<button class="like" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post like"><i class="fa fa-heart"></i> 2.2k</button>
+						<div class="full-content-comment">
+							<div class="your-comment">
+								<a href="#" class="full-content-avatar"><img src="images/avatar2.png" alt=""></a>
+							    <textarea id="full-content-text" class="form-control" placeholder="Comment..." aria-describedby="sizing-addon1"></textarea>
+							    <button id="full-content-camera" type="button" class="btn btn-primary"><i class="fa fa-camera fa-lg"></i></button>
+							    <button id="full-content-smile" type="button" class="btn btn-primary"> <i class="fa fa-smile-o fa-lg"></i></button>
+						    </div>
+						    <div class="user-comment">
+						    	<div class="poster">
+							  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+							  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+									<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+								    <span id="post-time-inline" class="post-time"> · 5m ago</span>
+								    <div class="comment-content"><span class="ref-user" href="#">@JessBeews</span> Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.=</div>
+								    <div class="comment-content comment-image"><img src="images/waterdrop.jpg" alt=""></div>
+								    <div class="action-perform">
+									    <button class="share" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+										<button class="comment" id="button-function-for-post comment"><i class="fa fa-comment"></i> </button>
+										<button class="like" id="button-function-for-post like"><i class="fa fa-heart"></i> </button>
+									</div>
+							  	</div>
+						    </div>
+						    <div class="user-comment">
+						    	<div class="poster">
+							  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+							  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+									<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+								    <span id="post-time-inline" class="post-time"> · 5m ago</span>
+								    <div class="comment-content"><span class="ref-user" href="#">@JessBeews</span> Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.=</div>
+								    <div class="action-perform">
+									    <button class="share" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+										<button class="comment" id="button-function-for-post comment"><i class="fa fa-comment"></i> </button>
+										<button class="like" id="button-function-for-post like"><i class="fa fa-heart"></i> </button>
+									</div>
+							  	</div>
+						    </div>
+						    <div class="user-comment">
+						    	<div class="poster">
+							  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+							  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+									<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+								    <span id="post-time-inline" class="post-time"> · 5m ago</span>
+								    <div class="comment-content"><span class="ref-user" href="#">@JessBeews</span> Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.=</div>
+								    <div class="action-perform">
+									    <button class="share" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+										<button class="comment" id="button-function-for-post comment"><i class="fa fa-comment"></i> </button>
+										<button class="like" id="button-function-for-post like"><i class="fa fa-heart"></i> </button>
+									</div>
+							  	</div>
+						    </div>
+						    <div class="full-content-footer">
+						    	<center>
+						    		<img src="images/logo_blue_bright.png" width="21"><br />
+						    		<a href="#post1" style="color: #8899a6">Back to top</a>
+						    	</center>
+						    </div>
+						</div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+		    </a>
+		    <button class="share" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+			<button class="comment" style="margin-left: 27px;border-width: 0;background: transparent;" id="button-function-for-post comment"><i class="fa fa-comment"></i> 1.1k</button>
+			<button class="like" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post like"><i class="fa fa-heart"></i> 2.2k</button>
+		  </div>
+
+
+		  <!--****************************************** POST 2 *****************************************************-->
+		  
+
+		  <div id="add-border-top" class="panel-body">
+		  	<div class="poster">
+		  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+		  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+				<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+			    <div class="post-time">5m ago</div>
+		  	</div>
+		    <a id="a-post" class="post-content" data-toggle="modal" data-target="#post2" href="#">
+		        <div class="caption">Yay with <span class="ref-user">@Hooman</span></div>
+		    	<div id="panel-main-content" class="panel panel-default">
+				  <div id="post-image-thumbnail" class="panel-body"><img class="img-responsive" src="images/post2/1.jpg" alt=""></div>
+				</div>
+				<div name="post2" class="modal fade" id="post2" tabindex="-1" role="dialog" aria-labelledby="post2Label">
+				  <div class="modal-dialog modal-lg" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-backdrop="static"  data-keyboard="false" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <div name="top-post" class="poster">
+					  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+					  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+							<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+						    <div class="post-time">5m ago</div>
+					  	</div>
+					  	
+				      </div>
+				      <div class="modal-body">
+				        <div class="full-content">
+					  		<div class="caption full-content-caption">Yay with <span class="ref-user">@Hooman</span></div>
+							<center><div class="full-content-image"><img class="img-responsive" src="images/post2/1.jpg" alt=""></div></center>
+					  	</div>
+					  	<div class="end-of-part"></div>
+					  	<button class="share" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+						<button class="comment" style="margin-left: 27px;border-width: 0;background: transparent;" id="button-function-for-post comment"><i class="fa fa-comment"></i> 1.1k</button>
+						<button class="like" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post like"><i class="fa fa-heart"></i> 2.2k</button>
+						<div class="full-content-comment">
+							<div class="your-comment">
+								<a href="#" class="full-content-avatar"><img src="images/avatar2.png" alt=""></a>
+							    <textarea id="full-content-text" class="form-control" placeholder="Comment..." aria-describedby="sizing-addon1"></textarea>
+							    <button id="full-content-camera" type="button" class="btn btn-primary"><i class="fa fa-camera fa-lg"></i></button>
+							    <button id="full-content-smile" type="button" class="btn btn-primary"> <i class="fa fa-smile-o fa-lg"></i></button>
+						    </div>
+						    <div class="user-comment">
+						    	<div class="poster">
+							  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+							  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+									<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+								    <span id="post-time-inline" class="post-time"> · 5m ago</span>
+								    <div class="comment-content"><span class="ref-user" href="#">@JessBeews</span> Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.=</div>
+								    <div class="comment-content comment-image"><img src="images/waterdrop.jpg" alt=""></div>
+								    <div class="action-perform">
+									    <button class="share" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+										<button class="comment" id="button-function-for-post comment"><i class="fa fa-comment"></i> </button>
+										<button class="like" id="button-function-for-post like"><i class="fa fa-heart"></i> </button>
+									</div>
+							  	</div>
+						    </div>
+						    <div class="user-comment">
+						    	<div class="poster">
+							  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+							  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+									<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+								    <span id="post-time-inline" class="post-time"> · 5m ago</span>
+								    <div class="comment-content"><span class="ref-user" href="#">@JessBeews</span> Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.=</div>
+								    <div class="action-perform">
+									    <button class="share" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+										<button class="comment" id="button-function-for-post comment"><i class="fa fa-comment"></i> </button>
+										<button class="like" id="button-function-for-post like"><i class="fa fa-heart"></i> </button>
+									</div>
+							  	</div>
+						    </div>
+						    <div class="user-comment">
+						    	<div class="poster">
+							  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+							  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+									<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+								    <span id="post-time-inline" class="post-time"> · 5m ago</span>
+								    <div class="comment-content"><span class="ref-user" href="#">@JessBeews</span> Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.=</div>
+								    <div class="action-perform">
+									    <button class="share" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+										<button class="comment" id="button-function-for-post comment"><i class="fa fa-comment"></i> </button>
+										<button class="like" id="button-function-for-post like"><i class="fa fa-heart"></i> </button>
+									</div>
+							  	</div>
+						    </div>
+						    <div class="full-content-footer">
+						    	<center>
+						    		<img src="images/logo_blue_bright.png" width="21"><br />
+						    		<a href="#post2" style="color: #8899a6">Back to top</a>
+						    	</center>
+						    </div>
+						</div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+		    </a>
+		    <button class="share" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+			<button class="comment" style="margin-left: 27px;border-width: 0;background: transparent;" id="button-function-for-post comment"><i class="fa fa-comment"></i> 1.1k</button>
+			<button class="like" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post like"><i class="fa fa-heart"></i> 2.2k</button>
+		  </div>
+		  <!--****************************************** POST 3 *****************************************************-->
+
+		  <div id="add-border-top" class="panel-body">
+		  	<div class="poster">
+		  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+		  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+				<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+			    <div class="post-time">5m ago</div>
+		  	</div>
+		    <a id="a-post" class="post-content" data-toggle="modal" data-target="#post3" href="#">
+		        <div class="caption-long">Chunusu and Fruncu. Enough for a live. Who wanna go next time? <span class="hashtag">#WillBeBack</span> <span class="hashtag">#NeverForGet</span> <span class="hashtag">#JohnCena</span> with <span class="ref-user">@Hooman</span></div>
+		    	<div id="panel-main-content" class="panel panel-default">
+				  <div id="post-image-thumbnail" class="panel-body">
+				    <div class="first-haft"><img class="img-responsive" src="images/post3/1.jpg" alt=""> </div>
+				    <div class="second-haft"> <img class="img-responsive" src="images/post3/2.jpg" alt=""></div>
+				  </div>
+				</div>  
+				<div name="post3" class="modal fade" id="post3" tabindex="-1" role="dialog" aria-labelledby="post3Label">
+				  <div class="modal-dialog modal-lg" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-backdrop="static"  data-keyboard="false" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <div name="top-post" class="poster">
+					  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+					  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+							<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+						    <div class="post-time">5m ago</div>
+					  	</div>
+					  	
+				      </div>
+				      <div class="modal-body">
+				        <div class="full-content">
+					  		<div class="caption-long full-content-caption">Chunusu and Fruncu. Enough for a live. Who wanna go next time?<br /> <span class="hashtag">#WillBeBack</span> <span class="hashtag">#NeverForGet</span> <span class="hashtag">#JohnCena</span> with <span class="ref-user">@Hooman</span></div>
+							<center><div class="full-content-image"><img class="img-responsive" src="images/post3/1.jpg" alt=""></div></center>
+							<center><div class="full-content-image"><img class="img-responsive" src="images/post3/2.jpg" alt=""></div></center>
+					  	</div>
+					  	<div class="end-of-part"></div>
+					  	<button class="share" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+						<button class="comment" style="margin-left: 27px;border-width: 0;background: transparent;" id="button-function-for-post comment"><i class="fa fa-comment"></i> 1.1k</button>
+						<button class="like" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post like"><i class="fa fa-heart"></i> 2.2k</button>
+						<div class="full-content-comment">
+							<div class="your-comment">
+								<a href="#" class="full-content-avatar"><img src="images/avatar2.png" alt=""></a>
+							    <textarea id="full-content-text" class="form-control" placeholder="Comment..." aria-describedby="sizing-addon1"></textarea>
+							    <button id="full-content-camera" type="button" class="btn btn-primary"><i class="fa fa-camera fa-lg"></i></button>
+							    <button id="full-content-smile" type="button" class="btn btn-primary"> <i class="fa fa-smile-o fa-lg"></i></button>
+						    </div>
+						    <div class="user-comment">
+						    	<div class="poster">
+							  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+							  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+									<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+								    <span id="post-time-inline" class="post-time"> · 5m ago</span>
+								    <div class="comment-content"><span class="ref-user" href="#">@JessBeews</span> Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.=</div>
+								    <div class="comment-content comment-image"><img src="images/waterdrop.jpg" alt=""></div>
+								    <div class="action-perform">
+									    <button class="share" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+										<button class="comment" id="button-function-for-post comment"><i class="fa fa-comment"></i> </button>
+										<button class="like" id="button-function-for-post like"><i class="fa fa-heart"></i> </button>
+									</div>
+							  	</div>
+						    </div>
+						    <div class="user-comment">
+						    	<div class="poster">
+							  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+							  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+									<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+								    <span id="post-time-inline" class="post-time"> · 5m ago</span>
+								    <div class="comment-content"><span class="ref-user" href="#">@JessBeews</span> Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.=</div>
+								    <div class="action-perform">
+									    <button class="share" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+										<button class="comment" id="button-function-for-post comment"><i class="fa fa-comment"></i> </button>
+										<button class="like" id="button-function-for-post like"><i class="fa fa-heart"></i> </button>
+									</div>
+							  	</div>
+						    </div>
+						    <div class="user-comment">
+						    	<div class="poster">
+							  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+							  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+									<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+								    <span id="post-time-inline" class="post-time"> · 5m ago</span>
+								    <div class="comment-content"><span class="ref-user" href="#">@JessBeews</span> Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.=</div>
+								    <div class="action-perform">
+									    <button class="share" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+										<button class="comment" id="button-function-for-post comment"><i class="fa fa-comment"></i> </button>
+										<button class="like" id="button-function-for-post like"><i class="fa fa-heart"></i> </button>
+									</div>
+							  	</div>
+						    </div>
+						    <div class="full-content-footer">
+						    	<center>
+						    		<img src="images/logo_blue_bright.png" width="21"><br />
+						    		<a href="#post3" style="color: #8899a6">Back to top</a>
+						    	</center>
+						    </div>
+						</div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+		    </a>
+		    <button class="share" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+			<button class="comment" style="margin-left: 27px;border-width: 0;background: transparent;" id="button-function-for-post comment"><i class="fa fa-comment"></i> 1.1k</button>
+			<button class="like" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post like"><i class="fa fa-heart"></i> 2.2k</button>
+		  </div>
+          <!--****************************************** POST 4 *****************************************************-->
+
+
+		  <div id="add-border-top" class="panel-body">
+		  	<div class="poster">
+		  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+		  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+				<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+			    <div class="post-time">5m ago</div>
+		  	</div>
+		    <a id="a-post" class="post-content" data-toggle="modal" data-target="#post4" href="#">
+		        <div class="caption"><span class="hashtag">#Selfie</span> <span class="hashtag">#Healthy</span> with <span class="ref-user">@Hooman</span> and <span class="ref-user">4 others</span></div>
+		    	<div id="panel-main-content" class="panel panel-default">
+				  <div id="post-image-thumbnail" class="panel-body">
+				    <div class="first-quarter"><img class="img-responsive" src="images/post4/1.jpg" alt=""></div>
+				    <div class="second-quarter"><img class="img-responsive" src="images/post4/2.jpg" alt=""></div>
+				    <div class="third-quarter"><img class="img-responsive" src="images/post4/3.jpg" alt=""></div>
+				    <div class="forth-quarter"><img class="img-responsive" src="images/post4/4.jpg" alt=""></div>
+				  </div>
+				</div>  
+				<div name="post4" class="modal fade" id="post4" tabindex="-1" role="dialog" aria-labelledby="post4Label">
+				  <div class="modal-dialog modal-lg" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-backdrop="static"  data-keyboard="false" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <div name="top-post" class="poster">
+					  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+					  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+							<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+						    <div class="post-time">5m ago</div>
+					  	</div>
+					  	
+				      </div>
+				      <div class="modal-body">
+				        <div class="full-content">
+					  		<div class="caption full-content-caption"><span class="hashtag">#Selfie</span> <span class="hashtag">#Healthy</span> with <span class="ref-user">@Hooman</span> and <span class="ref-user">4 others</span></div>
+							<center><div class="full-content-image"><img class="img-responsive" src="images/post4/1.jpg" alt=""></div></center>
+							<center><div class="full-content-image"><img class="img-responsive" src="images/post4/2.jpg" alt=""></div></center>
+							<center><div class="full-content-image"><img class="img-responsive" src="images/post4/3.jpg" alt=""></div></center>
+							<center><div class="full-content-image"><img class="img-responsive" src="images/post4/4.jpg" alt=""></div></center>
+							<center><div class="full-content-image"><img class="img-responsive" src="images/post4/5.jpg" alt=""></div></center>
+							<center><div class="full-content-image"><img class="img-responsive" src="images/post4/6.jpg" alt=""></div></center>
+							<center><div class="full-content-image"><img class="img-responsive" src="images/post4/7.jpg" alt=""></div></center>
+					  	</div>
+					  	<div class="end-of-part"></div>
+					  	<button class="share" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+						<button class="comment" style="margin-left: 27px;border-width: 0;background: transparent;" id="button-function-for-post comment"><i class="fa fa-comment"></i> 1.1k</button>
+						<button class="like" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post like"><i class="fa fa-heart"></i> 2.2k</button>
+						<div class="full-content-comment">
+							<div class="your-comment">
+								<a href="#" class="full-content-avatar"><img src="images/avatar2.png" alt=""></a>
+							    <textarea id="full-content-text" class="form-control" placeholder="Comment..." aria-describedby="sizing-addon1"></textarea>
+							    <button id="full-content-camera" type="button" class="btn btn-primary"><i class="fa fa-camera fa-lg"></i></button>
+							    <button id="full-content-smile" type="button" class="btn btn-primary"> <i class="fa fa-smile-o fa-lg"></i></button>
+						    </div>
+						    <div class="user-comment">
+						    	<div class="poster">
+							  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+							  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+									<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+								    <span id="post-time-inline" class="post-time"> · 5m ago</span>
+								    <div class="comment-content"><span class="ref-user" href="#">@JessBeews</span> Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.=</div>
+								    <div class="comment-content comment-image"><img src="images/waterdrop.jpg" alt=""></div>
+								    <div class="action-perform">
+									    <button class="share" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+										<button class="comment" id="button-function-for-post comment"><i class="fa fa-comment"></i> </button>
+										<button class="like" id="button-function-for-post like"><i class="fa fa-heart"></i> </button>
+									</div>
+							  	</div>
+						    </div>
+						    <div class="user-comment">
+						    	<div class="poster">
+							  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+							  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+									<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+								    <span id="post-time-inline" class="post-time"> · 5m ago</span>
+								    <div class="comment-content"><span class="ref-user" href="#">@JessBeews</span> Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.=</div>
+								    <div class="action-perform">
+									    <button class="share" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+										<button class="comment" id="button-function-for-post comment"><i class="fa fa-comment"></i> </button>
+										<button class="like" id="button-function-for-post like"><i class="fa fa-heart"></i> </button>
+									</div>
+							  	</div>
+						    </div>
+						    <div class="user-comment">
+						    	<div class="poster">
+							  		<a href="#"><img id="poster-avatar" src="images/user.jpg" alt=""></a>
+							  		<a id="poster-name" href="#" class="name-medium">Jessica</a>
+									<a id="poster-another-name" href="#" class="another-name-medium">@JessBeews</a>
+								    <span id="post-time-inline" class="post-time"> · 5m ago</span>
+								    <div class="comment-content"><span class="ref-user" href="#">@JessBeews</span> Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.= Too deep =.=</div>
+								    <div class="action-perform">
+									    <button class="share" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+										<button class="comment" id="button-function-for-post comment"><i class="fa fa-comment"></i> </button>
+										<button class="like" id="button-function-for-post like"><i class="fa fa-heart"></i> </button>
+									</div>
+							  	</div>
+						    </div>
+						    <div class="full-content-footer">
+						    	<center>
+						    		<img src="images/logo_blue_bright.png" width="21"><br />
+						    		<a href="#post4" style="color: #8899a6">Back to top</a>
+						    	</center>
+						    </div>
+						</div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+		    </a>
+		    <button class="share" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post share"><i class="fa fa-share"></i></button>
+			<button class="comment" style="margin-left: 27px;border-width: 0;background: transparent;" id="button-function-for-post comment"><i class="fa fa-comment"></i> 1.1k</button>
+			<button class="like" style="margin-left: 20px;border-width: 0;background: transparent;" id="button-function-for-post like"><i class="fa fa-heart"></i> 2.2k</button>
+		  </div>
+
+
+
+		</div>
+	  </div>
+	  <div class="col-md-3">
+	    <div class="panel panel-default">
+		  <div class="panel-body">
+		    <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs"> 
+		  	  <ul id="myTabs" class="nav nav-tabs" role="tablist"> 
+		  	    <li role="presentation" class="active">
+		  	      <a href="#follow" id="follow-tab" role="tab" data-toggle="tab" aria-controls="follow" aria-expanded="false">Follow</a>
+		  	    </li> 
+		  	    <li role="presentation" class="">
+		  	      <a href="#friends" role="tab" id="friends-tab" data-toggle="tab" aria-controls="friends" aria-expanded="true">Friends</a>
+		  	    </li> 
+		  	    <li role="presentation" class="">
+		  	      <a href="#ads" role="tab" id="ads-tab" data-toggle="tab" aria-controls="ads" aria-expanded="false">Ads</a>
+		  	    </li> 
+		  	  </ul> 
+		  	  <div id="myTabContent" class="tab-content"> 
+		  	    <div role="tabpanel" class="tab-pane fade active in" id="follow" aria-labelledby="follow-tab"> 
+		  	      <span class="title">Fav. B-bers</span> 
+		  	      <span class="follow-tab-action pull-right"><a href="">Refresh</a> · <a href="">View all</a></span>
+		  	      <div class="bber">
+		  	        <a href="#" class="bber-link">
+		  	          <img src="images/user.jpg" alt="" class="bber-img">
+		  	          <span class="bber-name">Jessica</span>
+		  	          <span class="bber-other-name">@JessBeews</span>
+		  	          <button class="btn btn-default button-follow"><i class="fa fa-plus"></i> <span class="hidden-text-follow">Follow</span></button>
+		  	          <button class="btn btn-default button-remove"> <i class="fa fa-remove"> </i><span class="hidden-text-remove"> Remove</span></button>
+		  	        </a>
+		  	      </div>
+		  	      <div class="clearfix"></div>
+		  	      <div class="bber">
+		  	        <a href="#" class="bber-link">
+		  	          <img src="images/user.jpg" alt="" class="bber-img">
+		  	          <span class="bber-name">Jessica</span>
+		  	          <span class="bber-other-name">@JessBeews</span>
+		  	          <button class="btn btn-default button-follow"><i class="fa fa-plus"></i> <span class="hidden-text-follow">Follow</span></button>
+		  	          <button class="btn btn-default button-remove"> <i class="fa fa-remove"> </i><span class="hidden-text-remove"> Remove</span></button>
+		  	        </a>
+		  	      </div>
+		  	      <div class="clearfix"></div>
+		  	      <div class="bber">
+		  	        <a href="#" class="bber-link">
+		  	          <img src="images/user.jpg" alt="" class="bber-img">
+		  	          <span class="bber-name">Jessica</span>
+		  	          <span class="bber-other-name">@JessBeews</span>
+		  	          <button class="btn btn-default button-follow"><i class="fa fa-plus"></i> <span class="hidden-text-follow">Follow</span></button>
+		  	          <button class="btn btn-default button-remove"> <i class="fa fa-remove"> </i><span class="hidden-text-remove"> Remove</span></button>
+		  	        </a>
+		  	      </div>
+		  	      <div class="clearfix"></div>
+		  	      <div class="bber">
+		  	        <a href="#" class="bber-link">
+		  	          <img src="images/user.jpg" alt="" class="bber-img">
+		  	          <span class="bber-name">Jessica</span>
+		  	          <span class="bber-other-name">@JessBeews</span>
+		  	          <button class="btn btn-default button-follow"><i class="fa fa-plus"></i> <span class="hidden-text-follow">Follow</span></button>
+		  	          <button class="btn btn-default button-remove"> <i class="fa fa-remove"> </i><span class="hidden-text-remove"> Remove</span></button>
+		  	        </a>
+		  	      </div>
+		  	      <div class="clearfix"></div>
+		  	    </div> 
+		  	    <div role="tabpanel" class="tab-pane fade" id="friends" aria-labelledby="friends-tab"> 
+				      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button class="btn btn-default button-accept">Confirm</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>	
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button class="btn btn-default button-accept">Confirm</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button class="btn btn-default button-accept">Confirm</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button class="btn btn-default button-accept">Confirm</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="divider-part">B-ber you may know</div>
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button id="btn-add" class="btn btn-default button-accept">Add</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button id="btn-add" class="btn btn-default button-accept">Add</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button id="btn-add" class="btn btn-default button-accept">Add</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button id="btn-add" class="btn btn-default button-accept">Add</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="divider-part-2"><b><center><a href="">View All</a></center></b></div>
+		  	    </div> 
+
+		  	    <div role="tabpanel" class="tab-pane fade" id="ads" aria-labelledby="ads-tab"> 
+		  	      <div id="carousel-example-generic" class="carousel slide"data-interval="false" data-ride="carousel">
+
+
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox">
+				    <div class="item active">
+				      <a href="#"><img src="images/sample1.jpg" alt="..."></a>
+				      <div class="carousel-caption">
+				        
+				      </div>
+				      <a id="ad-link text-center" href=""><div class="ad-title">Hello</div><div class="ad-caption">Is it me your looking for?</div></a>
+				    </div>
+				    <div class="item">
+				      <a href="#"><img src="images/sample1.jpg" alt="..."></a>
+				      <div class="carousel-caption">
+
+				      </div>
+				      <a id="ad-link text-center" href=""><div class="ad-title">Hello</div><div class="ad-caption">Is it me your looking for?</div></a>
+				    </div>
+				    <div class="item">
+				      <a href="#"><img src="images/sample1.jpg" alt="..."></a>
+				      <div class="carousel-caption">
+				        
+				      </div>
+				      <a id="ad-link text-center" href=""><div class="ad-title">Hello</div><div class="ad-caption">Is it me your looking for?</div></a>
+				    </div>
+				    <div class="item">
+				      <a href="#"><img src="images/sample1.jpg" alt="..."></a>
+				      <div class="carousel-caption">
+				        
+				      </div>
+				      <a id="ad-link text-center" href=""><div class="ad-title">Hello</div><div class="ad-caption">Is it me your looking for?</div></a>
+				    </div>
+				  </div>
+
+				  <!-- Controls -->
+				  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div> 
+		  	    </div> 
+		  	  </div> 
+		  	</div>
+		  </div>
+		</div>
+		<div class="panel panel-default">
+		      <div id="panel-trends-heading">
+			    Travel Trends <span id="normal-text"><a data-toggle="modal" data-target="#myModal" href="">Customize</a></span>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <div class="modal-title" id="custom-modal-title myModalLabel">Customize trend filter</div>
+				      </div>
+				      <div class="modal-body">
+				        <div id="type">Location: <input id="input-location" type="text" class="form-control" id="exampleInputName2" placeholder="Search for location"></div>
+				        <div id="type" class="btn-toolbar" role="toolbar" aria-label="btn-groups-1">
+					        <div>Travel types: 
+								<div id="btn-group" class="btn-group" data-toggle="buttons">
+								  <label id="button-type" class="btn btn-primary active">
+								    <input type="radio" name="options" id="option1" autocomplete="off">Beach
+								  </label>
+								  <label id="button-type" class="btn btn-primary">
+								    <input type="radio" name="options" id="option2" autocomplete="off">Moutain
+								  </label>
+								  <label id="button-type" class="btn btn-primary">
+								    <input type="radio" name="options" id="option3" autocomplete="off">Famous places
+								  </label>
+								    <input id="input-type" type="text" id="option4" class="form-control" id="exampleInputName2" placeholder="Other types...">
+								</div>
+							</div>
+						</div>	
+						<div id="type" class="btn-toolbar" role="toolbar" aria-label="btn-groups-2">	
+							<div>Vehicles: 
+							  <div id="btn-group" class="btn-group" data-toggle="buttons">
+								  <label id="button-type" class="btn btn-primary active">
+								    <input type="radio" name="options" id="option1" autocomplete="off">Plane
+								  </label>
+								  <label id="button-type" class="btn btn-primary">
+								    <input type="radio" name="options" id="option2" autocomplete="off">Yacht
+								  </label>
+								  <label id="button-type" class="btn btn-primary">
+								    <input type="radio" name="options" id="option3" autocomplete="off">Car
+								  </label>
+								    <input id="input-type" type="text" id="option4" class="form-control" id="exampleInputName2" placeholder="Other types...">
+						      </div>
+							</div>
+						</div>  
+						<div id="type">Custom search: 
+							    <input type="text" class="form-control" id="exampleInputName2" placeholder="Search for anything else">
+						</div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Change</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			  </div>
+			  <div id="panel-trends-body" class="panel-body">
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			  </div>
+		  </div>
+		  <div id="panel-privacy" class="panel-body">
+			<ul class="list-inline">
+		      <li class="Footer-item Footer-copyright copyright">© 2016 B-Go</li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">About</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Help</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Terms</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Privacy</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Cookies</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Ads info</a></li>
+		  </div>
+	  </div>
+	</div>
+  </div>
+  </div>
+</body>
+</html>

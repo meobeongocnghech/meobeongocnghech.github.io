@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/logo_blue_bright.png" type="favicon/ico" />
+  <title>Post</title>
+  <!--Get css and js from internet-->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!--Local library in case of no internet connection. Some feature might not be performed properly-->	
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="stylesheet" type="text/css" href="style/font-awesome.css">
+  <script>
+ 	$('#myTabs a[href="#profile"]').tab('show') // Select tab by name
+    $('#myTabs a:first').tab('show') // Select first tab
+    $('#myTabs a:last').tab('show') // Select last tab
+    $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)  
+  </script>
+</head>
+<body>
+  <header class="navbar-fixed-top">
+	<nav class="navbar navbar-default">
+	  <div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<ul class="nav navbar-nav navbar-left">
+		  <li><a class="brand" href="home.html"><img id="brand-img" src="images/logo_white.png" alt=""></a></li>
+		  <li id="t">
+			<form class="navbar-form navbar-left" role="search">
+			  <div class="form-group">
+				<input type="text" id="input-text-search" class="form-control" placeholder="Search">
+				<button type="submit" class="search-button"><i id="icon-search" class="fa fa-search"></i></button>
+			  </div>
+			</form>
+		  </li>
+		</ul>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+
+		  <ul id="nav-center" class="nav navbar-nav">
+			<li><a class="nav-main" href="home.html"><i class="fa fa-home fa-2x"></i><span class="nav-main-text"> Home</span></a></li>
+			<li><a class="nav-main" href="notification.html"><i class="fa fa-bell fa-2x"></i> <span class="nav-main-text"> Notifications <span class="badge">42</span></span></a></li>
+			<li><a class="nav-main" href="#"><i class="fa fa-envelope fa-2x"></i> <span class="nav-main-text"> Messages <span class="badge">10</span></span></li>
+		  </ul>
+
+
+		  <ul class="nav navbar-nav navbar-right">
+		    <div class="dropdown" id="avatar">
+			  <a id="avatar-href" class="nav-right" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			    <img  src="images/avatar2.png" alt="" class="img-avatar"> 
+			  </a>
+			  <span class="name">User Con Coc</span>
+			  <ul class="dropdown-menu" id="avatar-dropdown-menu">
+			    <li><a class="dropdown-option" href="profile.html">View Profile</a></li>
+			    <li role="separator" class="divider"></li>
+			    <li><a class="dropdown-option" href="#">Help</a></li>
+			    <li><a class="dropdown-option" href="#">Settings</a></li>
+			    <li role="separator" class="divider"></li>
+			    <li><a class="dropdown-option" href="login.html">Logout</a></li>
+			  </ul>
+			  <a href="#" class="nav-right"><button id="button-post" type="button" class="btn btn-default"><i class="fa fa-pencil"> </i> Post</button></a> 
+			</div>
+		  </ul>
+	  </div>
+	</nav>
+  </header>		
+  <div class="container">
+	<div class="row">
+	  <div class="col-md-3">
+		<div class="panel panel-default">
+		  <div id="panel-info-heading" class="panel-heading">
+		    <a id="avatar" class="nav-right" href="profile.html"><img  src="images/background-medium.png" alt="" class="img-background-medium"></a>
+			<a id="avatar" class="nav-right" href="profile.html"><img  src="images/avatar2.png" alt="" class="img-avatar-medium"></a>
+		  </div>
+		  <div id="panel-info-body" id class="panel-body">
+			<a href="profile.html" class="name-medium">User Con Coc</a>
+			<a href="profile.html" class="another-name-medium">@RealFrog</a>
+			<div class="clearfix"></div>
+			<div class="my-info">
+			  <div class="my-info-element">O loko shoppong ond wotching Doto 2. Oppo Dondo os moh odol</div>
+			  <div class="my-info-element"><i class="fa fa-map"></i> Hanoi, Viet Nam</div>
+			  <div class="my-info-element"><i class="fa fa-calendar"></i> Joined June 09, 2016</div>
+			  <!--<div class="my-info-element"><button type="button" class="button-tweet btn btn-primary"><i class="fa fa-pencil fa-lg"></i> <span class="something">&nbsp;&nbsp;Say hello to User</span></button></div>-->
+		    </div>
+		  </div>
+		</div> 	
+		  <div class="panel panel-default">
+		      <div id="panel-trends-heading">
+			    Travel Trends <span id="normal-text"><a data-toggle="modal" data-target="#myModal" href="">Customize</a></span>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <div class="modal-title" id="custom-modal-title myModalLabel">Customize trend filter</div>
+				      </div>
+				      <div class="modal-body">
+				        <div id="type">Location: <input id="input-location" type="text" class="form-control" id="exampleInputName2" placeholder="Search for location"></div>
+				        <div id="type" class="btn-toolbar" role="toolbar" aria-label="btn-groups-1">
+					        <div>Travel types: 
+								<div id="btn-group" class="btn-group" data-toggle="buttons">
+								  <label id="button-type" class="btn btn-primary active">
+								    <input type="radio" name="options" id="option1" autocomplete="off">Beach
+								  </label>
+								  <label id="button-type" class="btn btn-primary">
+								    <input type="radio" name="options" id="option2" autocomplete="off">Moutain
+								  </label>
+								  <label id="button-type" class="btn btn-primary">
+								    <input type="radio" name="options" id="option3" autocomplete="off">Famous places
+								  </label>
+								    <input id="input-type" type="text" id="option4" class="form-control" id="exampleInputName2" placeholder="Other types...">
+								</div>
+							</div>
+						</div>	
+						<div id="type" class="btn-toolbar" role="toolbar" aria-label="btn-groups-2">	
+							<div>Vehicles: 
+							  <div id="btn-group" class="btn-group" data-toggle="buttons">
+								  <label id="button-type" class="btn btn-primary active">
+								    <input type="radio" name="options" id="option1" autocomplete="off">Plane
+								  </label>
+								  <label id="button-type" class="btn btn-primary">
+								    <input type="radio" name="options" id="option2" autocomplete="off">Yacht
+								  </label>
+								  <label id="button-type" class="btn btn-primary">
+								    <input type="radio" name="options" id="option3" autocomplete="off">Car
+								  </label>
+								    <input id="input-type" type="text" id="option4" class="form-control" id="exampleInputName2" placeholder="Other types...">
+						      </div>
+							</div>
+						</div>  
+						<div id="type">Custom search: 
+							    <input type="text" class="form-control" id="exampleInputName2" placeholder="Search for anything else">
+						</div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Change</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			  </div>
+			  <div id="panel-trends-body" class="panel-body">
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			    <div class="trend">
+			    	<a href="">
+			    	  <div class="hashtag">Paris</div>
+			    	  <div class="statics">4.44M entries</div>
+			    	</a>
+			    </div>
+			  </div>
+		  </div>
+		 
+      </div>
+	  <div class="col-md-6">
+	  <div class="panel panel-default">
+	  <div class="panel-body">
+	    <div class="">
+      <div id="postcontent">
+        <h3 style="color: #0084b4">New Post<div id="charcount" class="pull-right">0</div></h3><hr>
+        <form action="home.html" method="post" accept-charset="utf-8" role="form" id="new_post_form"> <div class="form-group">
+            <input type="text" maxlength="80" placeholder="Title (optional)" class="form-control" name="title">
+          </div>
+          <div class="form-group">
+            <textarea style="max-width:523px" name="content" class="form-control" id="newposttextarea" cols="80" rows="15" placeholder="Write your post here"></textarea>
+          </div>
+          <div align="right">
+	          <select class="btn btn-primary">
+	          	<option selected="selected">Public</option>
+	          	<option>Friend Only</option>
+	            <option>Private</option>            
+	          </select>
+          </div>
+          <div>
+          <table>
+          <tr>
+          <h4>Image</h3>
+          	<td><a href="#"><img src="images/plus.bmp" width="100px" height="100px"/></a></td>
+          </tr>
+          </table>
+          </div>
+          <br />
+          <p><center><input style="width: 122px" type="submit" id="newpostbutton" value="Post It" class="btn btn-primary btn-block"></center>
+          </p>
+        </form>
+      </div>
+    </div>
+	  </div>
+	</div>
+	  	
+	  </div>
+	  <div class="col-md-3">
+	    <div class="panel panel-default">
+		  <div class="panel-body">
+		    <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs"> 
+		  	  <ul id="myTabs" class="nav nav-tabs" role="tablist"> 
+		  	    <li role="presentation" class="active">
+		  	      <a href="#follow" id="follow-tab" role="tab" data-toggle="tab" aria-controls="follow" aria-expanded="false">Follow</a>
+		  	    </li> 
+		  	    <li role="presentation" class="">
+		  	      <a href="#friends" role="tab" id="friends-tab" data-toggle="tab" aria-controls="friends" aria-expanded="true">Friends</a>
+		  	    </li> 
+		  	    <li role="presentation" class="">
+		  	      <a href="#ads" role="tab" id="ads-tab" data-toggle="tab" aria-controls="ads" aria-expanded="false">Ads</a>
+		  	    </li> 
+		  	  </ul> 
+		  	  <div id="myTabContent" class="tab-content"> 
+		  	    <div role="tabpanel" class="tab-pane fade active in" id="follow" aria-labelledby="follow-tab"> 
+		  	      <span class="title">Fav. B-bers</span> 
+		  	      <span class="follow-tab-action pull-right"><a href="">Refresh</a> · <a href="">View all</a></span>
+		  	      <div class="bber">
+		  	        <a href="#" class="bber-link">
+		  	          <img src="images/user.jpg" alt="" class="bber-img">
+		  	          <span class="bber-name">Jessica</span>
+		  	          <span class="bber-other-name">@JessBeews</span>
+		  	          <button class="btn btn-default button-follow"><i class="fa fa-plus"></i> <span class="hidden-text-follow">Follow</span></button>
+		  	          <button class="btn btn-default button-remove"> <i class="fa fa-remove"> </i><span class="hidden-text-remove"> Remove</span></button>
+		  	        </a>
+		  	      </div>
+		  	      <div class="clearfix"></div>
+		  	      <div class="bber">
+		  	        <a href="#" class="bber-link">
+		  	          <img src="images/user.jpg" alt="" class="bber-img">
+		  	          <span class="bber-name">Jessica</span>
+		  	          <span class="bber-other-name">@JessBeews</span>
+		  	          <button class="btn btn-default button-follow"><i class="fa fa-plus"></i> <span class="hidden-text-follow">Follow</span></button>
+		  	          <button class="btn btn-default button-remove"> <i class="fa fa-remove"> </i><span class="hidden-text-remove"> Remove</span></button>
+		  	        </a>
+		  	      </div>
+		  	      <div class="clearfix"></div>
+		  	      <div class="bber">
+		  	        <a href="#" class="bber-link">
+		  	          <img src="images/user.jpg" alt="" class="bber-img">
+		  	          <span class="bber-name">Jessica</span>
+		  	          <span class="bber-other-name">@JessBeews</span>
+		  	          <button class="btn btn-default button-follow"><i class="fa fa-plus"></i> <span class="hidden-text-follow">Follow</span></button>
+		  	          <button class="btn btn-default button-remove"> <i class="fa fa-remove"> </i><span class="hidden-text-remove"> Remove</span></button>
+		  	        </a>
+		  	      </div>
+		  	      <div class="clearfix"></div>
+		  	      <div class="bber">
+		  	        <a href="#" class="bber-link">
+		  	          <img src="images/user.jpg" alt="" class="bber-img">
+		  	          <span class="bber-name">Jessica</span>
+		  	          <span class="bber-other-name">@JessBeews</span>
+		  	          <button class="btn btn-default button-follow"><i class="fa fa-plus"></i> <span class="hidden-text-follow">Follow</span></button>
+		  	          <button class="btn btn-default button-remove"> <i class="fa fa-remove"> </i><span class="hidden-text-remove"> Remove</span></button>
+		  	        </a>
+		  	      </div>
+		  	      <div class="clearfix"></div>
+		  	    </div> 
+		  	    <div role="tabpanel" class="tab-pane fade" id="friends" aria-labelledby="friends-tab"> 
+				      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button class="btn btn-default button-accept">Confirm</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>	
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button class="btn btn-default button-accept">Confirm</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button class="btn btn-default button-accept">Confirm</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button class="btn btn-default button-accept">Confirm</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="divider-part">B-ber you may know</div>
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button id="btn-add" class="btn btn-default button-accept">Add</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button id="btn-add" class="btn btn-default button-accept">Add</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button id="btn-add" class="btn btn-default button-accept">Add</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="bber">
+			  	        <a href="#" class="bber-link">
+			  	          <img src="images/user.jpg" alt="" class="bber-img">
+			  	          <span class="friend bber-name">Jessica</span>
+			  	          <span class="friend bber-other-name">@JessBeews</span>
+			  	          <button class="button-x"><i class="fa fa-remove"></i></button>
+			  	          <button id="btn-add" class="btn btn-default button-accept">Add</button>
+			  	        </a>
+			  	      </div>
+			  	      <div class="clearfix"></div>
+			  	      <div class="divider-part-2"><b><center><a href="">View All</a></center></b></div>
+		  	    </div> 
+
+		  	    <div role="tabpanel" class="tab-pane fade" id="ads" aria-labelledby="ads-tab"> 
+		  	      <div id="carousel-example-generic" class="carousel slide"data-interval="false" data-ride="carousel">
+
+
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox">
+				    <div class="item active">
+				      <a href="#"><img src="images/sample1.jpg" alt="..."></a>
+				      <div class="carousel-caption">
+				        
+				      </div>
+				      <a id="ad-link text-center" href=""><div class="ad-title">Hello</div><div class="ad-caption">Is it me your looking for?</div></a>
+				    </div>
+				    <div class="item">
+				      <a href="#"><img src="images/sample1.jpg" alt="..."></a>
+				      <div class="carousel-caption">
+
+				      </div>
+				      <a id="ad-link text-center" href=""><div class="ad-title">Hello</div><div class="ad-caption">Is it me your looking for?</div></a>
+				    </div>
+				    <div class="item">
+				      <a href="#"><img src="images/sample1.jpg" alt="..."></a>
+				      <div class="carousel-caption">
+				        
+				      </div>
+				      <a id="ad-link text-center" href=""><div class="ad-title">Hello</div><div class="ad-caption">Is it me your looking for?</div></a>
+				    </div>
+				    <div class="item">
+				      <a href="#"><img src="images/sample1.jpg" alt="..."></a>
+				      <div class="carousel-caption">
+				        
+				      </div>
+				      <a id="ad-link text-center" href=""><div class="ad-title">Hello</div><div class="ad-caption">Is it me your looking for?</div></a>
+				    </div>
+				  </div>
+
+				  <!-- Controls -->
+				  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div> 
+		  	    </div> 
+		  	  </div> 
+		  	</div>
+		  </div>
+		</div>
+	  	<div class="panel panel-default">
+		  <div id="panel-privacy" class="panel-body">
+			<ul class="list-inline">
+		      <li class="Footer-item Footer-copyright copyright">© 2016 B-Go</li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">About</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Help</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Terms</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Privacy</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Cooki</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Ads info</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Brand</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Blog</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Status</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Apps</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Jobs</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Businesses</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Media</a></li>
+		      <li class="Footer-item"><a class="Footer-link" href="#">Developers</a></li>
+		    </ul>
+		  </div>
+		  <div id="panel-advertise" class="panel-body">
+		    <a href="#">Advertise with B-Go</a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+</body>
+</html>
