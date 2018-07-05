@@ -69,6 +69,16 @@ body {
 	font-size: 18px;
 	width: 35%;
 	float: right;
+	background-color: #475FED;
+	text-align: center;
+	line-height: 18px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-radius: 5px;
+}
+.btn-signin:hover {
+	text-decoration: none;
+	color: #fff;
 }
 .forgot font { 
 	font-size: 18px;
